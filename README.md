@@ -1,61 +1,95 @@
-Portfolio of Projects
-This is my personal portfolio where I showcase some of the projects I've developed. My projects are built with technologies such as Java, C#, SQL, .NET, JavaScript, HTML, CSS, and Bootstrap. Throughout these projects, I've learned and applied concepts like Object-Oriented Programming (OOP), data structures, and multi-layered application architectures.
+# Portfolio
 
-Projects
-1. Data Structures Project in Java
-This project focuses on using data structures like Stack, Queue, and Array. Through this project, I've gained a deeper understanding of how these structures optimize data storage and access in applications.
+![GitHub License](https://img.shields.io/github/license/YourGitHub/Portfolio?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/YourGitHub/Portfolio?style=flat-square)
+![GitHub commits](https://img.shields.io/github/commits-since/YourGitHub/Portfolio/v1.0.0?style=flat-square)
 
-Technologies: Java, OOP
+Welcome to my portfolio! Below you can find some of the projects I have worked on, showcasing my skills and knowledge in various technologies.
 
-Key Features:
+---
 
-Implementation of fundamental data structures.
+## Projects
 
-Methods for inserting, deleting, and querying elements.
+### 1. **Java Software Engineering**
 
-2. Multi-Layered Project with C# and SQL
-This project uses a multi-layer architecture, with the backend developed in C# and SQL for database management, while the frontend is built using .NET, JavaScript, HTML, CSS, and Bootstrap.
+- **Technologies Used**: Java, Object-Oriented Programming (OOP), Data Structures (Stack, Queue, Array)
+- **Description**: A project focused on building a robust and scalable Java application using Object-Oriented Programming principles. It demonstrates my understanding of core data structures like stacks, queues, and arrays.
 
-Technologies: C#, SQL, .NET, JavaScript, HTML, CSS, Bootstrap
+---
 
-Key Features:
+### 2. **Multi-Layered Web Application**
 
-3-layer architecture (Presentation, Business Logic, Data Access).
+- **Technologies Used**: C#, SQL, .NET, JavaScript, HTML, CSS, Bootstrap
+- **Description**: A web application that follows a multi-layered architecture, with a C# backend, SQL database integration, and a frontend built using .NET, HTML, CSS, and Bootstrap.
 
-Connection with SQL databases for data persistence.
+---
 
-Dynamic, responsive user interface with Bootstrap.
+## Skills
 
-Why This Portfolio?
-This portfolio reflects my knowledge in object-oriented programming, as well as my ability to create applications with a robust architecture. It also demonstrates my skill in combining both frontend and backend technologies to build complete, functional solutions.
+- **Programming Languages**: Java, C#, JavaScript, HTML, CSS
+- **Frameworks & Tools**: .NET, Bootstrap, SQL
+- **Data Structures**: Stack, Queue, Array
+- **Version Control**: Git, GitHub
 
-Portafolio de Proyectos
-Este es mi portafolio personal donde muestro algunos de los proyectos que he desarrollado. Mis proyectos están construidos con tecnologías como Java, C#, SQL, .NET, JavaScript, HTML, CSS y Bootstrap. A través de estos proyectos, he aprendido y aplicado conceptos como la Programación Orientada a Objetos (POO), estructuras de datos y arquitecturas de aplicaciones de múltiples capas.
+---
 
-Proyectos
-1. Proyecto de Estructuras de Datos en Java
-Este proyecto se centra en el uso de estructuras de datos como Stack, Queue y Array. A través de este proyecto, he adquirido un entendimiento más profundo de cómo estas estructuras optimizan el almacenamiento y acceso a los datos en las aplicaciones.
+## Contact Me
 
-Tecnologías: Java, POO
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+- **GitHub**: [My GitHub](https://github.com/YourGitHub)
 
-Características clave:
+---
 
-Implementación de estructuras de datos fundamentales.
+## License
 
-Métodos para insertar, eliminar y consultar elementos.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-2. Proyecto de Arquitectura Multicapa con C# y SQL
-Este proyecto utiliza una arquitectura de múltiples capas, con el backend desarrollado en C# y SQL para la gestión de bases de datos, mientras que el frontend está construido utilizando .NET, JavaScript, HTML, CSS y Bootstrap.
+---
 
-Tecnologías: C#, SQL, .NET, JavaScript, HTML, CSS, Bootstrap
+# Portafolio
 
-Características clave:
+![Licencia GitHub](https://img.shields.io/github/license/YourGitHub/Portfolio?style=flat-square)
+![Problemas GitHub](https://img.shields.io/github/issues/YourGitHub/Portfolio?style=flat-square)
+![Commits GitHub](https://img.shields.io/github/commits-since/YourGitHub/Portfolio/v1.0.0?style=flat-square)
 
-Arquitectura de 3 capas (Presentación, Lógica de Negocios, Acceso a Datos).
+¡Bienvenido a mi portafolio! A continuación, puedes encontrar algunos de los proyectos en los que he trabajado, mostrando mis habilidades y conocimientos en varias tecnologías.
 
-Conexión con bases de datos SQL para persistencia de datos.
+---
 
-Interfaz de usuario dinámica y adaptable con Bootstrap.
+## Proyectos
 
-¿Por qué este portafolio?
-Este portafolio refleja mi conocimiento en programación orientada a objetos, así como mi capacidad para crear aplicaciones con una arquitectura robusta. También demuestra mi habilidad para combinar tecnologías tanto de frontend como de backend para construir soluciones completas y funcionales.
+### 1. **Ingeniería de Software en Java**
+
+- **Tecnologías Utilizadas**: Java, Programación Orientada a Objetos (OOP), Estructuras de Datos (Pila, Cola, Arreglo)
+- **Descripción**: Un proyecto centrado en la construcción de una aplicación robusta y escalable en Java utilizando los principios de la Programación Orientada a Objetos. Demuestra mi comprensión de estructuras de datos clave como pilas, colas y arreglos.
+
+---
+
+### 2. **Aplicación Web Multi-Capa**
+
+- **Tecnologías Utilizadas**: C#, SQL, .NET, JavaScript, HTML, CSS, Bootstrap
+- **Descripción**: Una aplicación web que sigue una arquitectura multi-capa, con un backend en C#, integración con base de datos SQL, y un frontend construido con .NET, HTML, CSS y Bootstrap.
+
+---
+
+## Habilidades
+
+- **Lenguajes de Programación**: Java, C#, JavaScript, HTML, CSS
+- **Frameworks & Herramientas**: .NET, Bootstrap, SQL
+- **Estructuras de Datos**: Pila, Cola, Arreglo
+- **Control de Versiones**: Git, GitHub
+
+---
+
+## Contacto
+
+- **Correo Electrónico**: [your-email@example.com](mailto:your-email@example.com)
+- **LinkedIn**: [Tu Perfil de LinkedIn](https://www.linkedin.com/in/your-profile)
+- **GitHub**: [Mi GitHub](https://github.com/YourGitHub)
+
+---
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
