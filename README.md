@@ -47,7 +47,7 @@ Welcome to my portfolio! Below you can find some of the projects I have worked o
 I would love to connect with you! Here are the ways to reach me:
 
 - **Email**: [aseguracalderon26@gmail.com](mailto:aseguracalderon26@gmail.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/andressc25)
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/andressc25)
 - **GitHub**: [My GitHub](https://github.com/AndresSC25)
 - **Website**: [My Portfolio Website](https://your-portfolio.com)
 
@@ -102,7 +102,7 @@ I would love to connect with you! Here are the ways to reach me:
 Me encantaría conectarme contigo. Aquí están las formas de contactarme:
 
 - **Correo Electrónico**: [aseguracalderon26@gmail.com](mailto:aseguracalderon26@gmail.com)
-- **LinkedIn**: [Tu Perfil de LinkedIn](https://www.linkedin.com/in/andressc25)
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/andressc25)
 - **GitHub**: [Mi GitHub](https://github.com/AndresSC25)
 - **Sitio Web**: [Mi Sitio Web de Portafolio](https://your-portfolio.com)
 
