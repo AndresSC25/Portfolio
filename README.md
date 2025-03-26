@@ -39,10 +39,6 @@ Welcome to my portfolio! Below you can find some of the projects I have worked o
 
 # Portafolio
 
-![Licencia GitHub](https://img.shields.io/github/license/YourGitHub/Portfolio?style=flat-square)
-![Problemas GitHub](https://img.shields.io/github/issues/YourGitHub/Portfolio?style=flat-square)
-![Commits GitHub](https://img.shields.io/github/commits-since/YourGitHub/Portfolio/v1.0.0?style=flat-square)
-
 ¡Bienvenido a mi portafolio! A continuación, puedes encontrar algunos de los proyectos en los que he trabajado, mostrando mis habilidades y conocimientos en varias tecnologías.
 
 ---
