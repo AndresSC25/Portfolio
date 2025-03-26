@@ -1,0 +1,484 @@
+---------------------------USER CRUD-----------------------------------
+-SP RETRIEVE BY ID USER-
+CREATE PROCEDURE [dbo].[RET_USER_BYID_PR]
+	@P_ID INT
+AS
+	SELECT * FROM user_tbl
+	where id = @P_ID;
+RETURN 0
+
+---------------------User_Role CRUD_-----------------------------------
+-SP CREATE USER_ROLE-
+CREATE PROCEDURE [dbo].[CRE_USER_ROL_PR]
+	@P_User_ID int,
+	@P_Rol_ID int
+AS
+	INSERT INTO user_rol_tbl(user_id,rol_id)
+	VALUES(@P_User_ID,@P_Rol_ID)
+RETURN 0
+
+-SP RETRIEVE_ALL USER_ROLE-
+CREATE PROCEDURE [RET_ALL_USER_ROL_PR]
+AS
+	SELECT id,user_id,rol_id FROM 
+	user_rol_tbl
+RETURN 0
+
+-SP RETRIEVE BY ID USER_ROLE-
+CREATE PROCEDURE [dbo].[RET_USER_ROL_BY_ID_PR]
+	@P_ID INT
+AS
+	SELECT * FROM user_rol_tbl
+	where id = @P_ID;
+RETURN 0
+
+----------------------------ROLE CRUD---------------------------------
+-CREATE ROL-
+CREATE PROCEDURE [dbo].[CRE_ROL_PR]
+	@P_Name nvarchar(50)
+AS
+	INSERT INTO rol_tbl(name)
+	VALUES(@P_Name)
+RETURN 0
+
+-Retrieve by id-
+CREATE PROCEDURE [dbo].[RET_ROL_BY_ID_PR]
+	@P_ID INT
+AS
+	SELECT * FROM rol_tbl
+	where id = @P_ID;
+RETURN 0
+
+-Update rol-
+CREATE PROCEDURE [dbo].[UPD_ROL_PR]
+	@P_ID INT,
+    @P_Name NVARCHAR(50)
+AS
+BEGIN
+    UPDATE rol_tbl
+    SET 
+		name = @P_Name
+    WHERE id = @P_ID;
+    RETURN 0;
+END;
+-Delete rol from intermediate tbl-
+CREATE PROCEDURE [dbo].[DEL_ROL_PR]
+	@P_IDUsuario int,
+	@P_IDRol int
+AS
+	Delete FROM user_rol_tbl 
+	where @P_IDUsuario = user_id and @P_IDRol = rol_id;
+RETURN 0
+-----------------------------------------\-EQUIPMENT CRUD-\---------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[CRE_EQUIPMENT_PR]
+	@P_Name NVARCHAR(50),
+	@P_Location NVARCHAR(150),
+	@P_Description NVARCHAR(50)
+
+AS
+	INSERT INTO equipment_tbl(name,location,description,created)
+	VALUES(@P_Name,@P_Location,@P_Description,GETDATE());
+RETURN 0;
+
+CREATE PROCEDURE [dbo].[DEL_EQUIPMENT_PR]
+	@P_Id int
+AS
+BEGIN
+    -- Verificar que existe product
+    IF EXISTS (SELECT 1 FROM dbo.equipment_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.equipment_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Nice
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Nicen't
+    END
+END;
+
+CREATE PROCEDURE [dbo].[RET_ALL_EQUIPMENTS_PR]
+AS
+	SELECT id,name,description,location,created
+	FROM equipment_tbl;
+RETURN 0
+
+CREATE PROCEDURE [dbo].RET_EQUIPMENT_BY_ID_PR
+	@P_Id INT
+AS
+	SELECT id,name,location,description,created
+	FROM equipment_tbl
+	WHERE id = @P_Id;
+RETURN 0;
+
+CREATE PROCEDURE [dbo].[UPD_EQUIPMENT_PR]
+	@P_Id INT,
+	@P_Name NVARCHAR(50),
+	@P_Description NVARCHAR(200),
+	@P_Location NVARCHAR(150)
+AS
+	UPDATE dbo.equipment_tbl
+    SET 
+        name = @P_Name,
+        description = @P_Description,
+        location = @P_Location
+    WHERE id = @P_Id;
+RETURN 0;
+
+-----------------------------------------\-Schedule CRUD-\---------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[CRE_SCHEDULE_PR]
+    @P_EmployeeId INT,
+    @P_DaysOfWeek NVARCHAR(50),
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_Created DATETIME
+AS
+BEGIN
+    INSERT INTO schedule_tbl(employee_id, days_of_week, time_of_entry, time_of_exit, created)
+    VALUES(@P_EmployeeId, @P_DaysOfWeek, @P_TimeOfEntry, @P_TimeOfExit, @P_Created);
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[DEL_SCHEDULE_PR]
+    @P_Id INT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM dbo.schedule_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.schedule_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Success
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Failure
+    END
+END;
+
+CREATE PROCEDURE [dbo].[RET_ALL_SCHEDULES_PR]
+AS
+BEGIN
+    SELECT id, employee_id, days_of_week, time_of_entry, time_of_exit, created
+    FROM schedule_tbl;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[RET_SCHEDULE_BY_ID_PR]
+    @P_Id INT
+AS
+BEGIN
+    SELECT id, employee_id, days_of_week, time_of_entry, time_of_exit, created
+    FROM schedule_tbl
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[UPD_SCHEDULE_PR]
+    @P_Id INT,
+    @P_EmployeeId INT,
+    @P_DaysOfWeek NVARCHAR(50),
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_Created DATETIME
+AS
+BEGIN
+    UPDATE dbo.schedule_tbl
+    SET 
+        employee_id = @P_EmployeeId,
+        days_of_week = @P_DaysOfWeek,
+        time_of_entry = @P_TimeOfEntry,
+        time_of_exit = @P_TimeOfExit,
+        created = @P_Created
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+-----------------------------------------\-Meeting CRUD-\---------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[CRE_MEETINGS_PR]
+    @P_ClientId INT,
+    @P_EmployeeId INT,
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_ProgrammedDate DATETIME,
+    @P_IsCancelled NVARCHAR(50),
+    @P_Created DATETIME
+AS
+BEGIN
+    INSERT INTO mettings_tbl(client_id, employee_id, time_of_entry, time_of_exit, programmed_date, is_cancelled, created)
+    VALUES(@P_ClientId, @P_EmployeeId, @P_TimeOfEntry, @P_TimeOfExit, @P_ProgrammedDate, @P_IsCancelled, @P_Created);
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[DEL_MEETINGS_PR]
+    @P_Id INT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM dbo.mettings_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.mettings_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Success
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Failure
+    END
+END;
+
+CREATE PROCEDURE [dbo].[RET_ALL_MEETINGS_PR]
+AS
+BEGIN
+    SELECT id, client_id, employee_id, time_of_entry, time_of_exit, programmed_date, is_cancelled, created
+    FROM mettings_tbl;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[RET_MEETING_BY_ID_PR]
+    @P_Id INT
+AS
+BEGIN
+    SELECT id, client_id, employee_id, time_of_entry, time_of_exit, programmed_date, is_cancelled, created
+    FROM mettings_tbl
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[UPD_MEETINGS_PR]
+    @P_Id INT,
+    @P_ClientId INT,
+    @P_EmployeeId INT,
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_ProgrammedDate DATETIME,
+    @P_IsCancelled NVARCHAR(50),
+    @P_Created DATETIME
+AS
+BEGIN
+    UPDATE dbo.mettings_tbl
+    SET 
+        client_id = @P_ClientId,
+        employee_id = @P_EmployeeId,
+        time_of_entry = @P_TimeOfEntry,
+        time_of_exit = @P_TimeOfExit,
+        programmed_date = @P_ProgrammedDate,
+        is_cancelled = @P_IsCancelled,
+        created = @P_Created
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+-----------------------------------------\-GroupClass CRUD-\---------------------------------------------------------------------------
+
+CREATE PROCEDURE [dbo].[CRE_GROUP_CLASS_PR]
+    @P_EmployeeId INT,
+    @P_ClassName NVARCHAR(50),
+    @P_MaxCapacity INT,
+    @P_CurrentRegistered INT,
+    @P_ClassDate DATETIME,
+    @P_StartTime TIME(7),
+    @P_EndTime TIME(7)
+AS
+    INSERT INTO group_class_tbl(employee_id, class_name, max_capacity, current_registered, class_time, start_time, end_time)
+    VALUES(@P_EmployeeId, @P_ClassName, @P_MaxCapacity, @P_CurrentRegistered, @P_ClassDate, @P_StartTime, @P_EndTime);
+RETURN 0;
+
+CREATE PROCEDURE [dbo].[DEL_GROUP_CLASS_PR]
+    @P_Id INT
+AS
+BEGIN
+    -- Verificar que existe group class
+    IF EXISTS (SELECT 1 FROM dbo.group_class_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.group_class_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Nice
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Nicen't
+    END
+END;
+
+CREATE PROCEDURE [dbo].[RET_ALL_GROUP_CLASSES_PR]
+AS
+    SELECT id, employee_id, class_name, max_capacity, current_registered, class_time, start_time, end_time
+    FROM group_class_tbl;
+RETURN 0;
+
+CREATE PROCEDURE [dbo].[RET_GROUP_CLASS_BY_ID_PR]
+    @P_Id INT
+AS
+    SELECT id, employee_id, class_name, max_capacity, current_registered, class_time, start_time, end_time
+    FROM group_class_tbl
+    WHERE id = @P_Id;
+RETURN 0;
+
+CREATE PROCEDURE [dbo].[UPD_GROUP_CLASS_PR]
+    @P_Id INT,
+    @P_EmployeeId INT,
+    @P_ClassName NVARCHAR(50),
+    @P_MaxCapacity INT,
+    @P_CurrentRegistered INT,
+    @P_ClassDate DATETIME,
+    @P_StartTime TIME(7),
+    @P_EndTime TIME(7)
+AS
+    UPDATE dbo.group_class_tbl
+    SET 
+        employee_id = @P_EmployeeId,
+        class_name = @P_ClassName,
+        max_capacity = @P_MaxCapacity,
+        current_registered = @P_CurrentRegistered,
+        class_time = @P_ClassDate,
+        start_time = @P_StartTime,
+        end_time = @P_EndTime
+    WHERE id = @P_Id;
+RETURN 0;
+
+-----------------------------------------\-User_GroupClass CRUD-\---------------------------------------------------------------------------
+
+CREATE PROCEDURE [dbo].[CRE_USER_GROUP_CLASS_PR]
+    @P_GroupClassId INT,
+    @P_ClientId INT,
+    @P_Created DATETIME
+AS
+BEGIN
+    INSERT INTO user_group_class_tbl(group_class_id, client_id, created)
+    VALUES(@P_GroupClassId, @P_ClientId, @P_Created);
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[DEL_USER_GROUP_CLASS_PR]
+    @P_Id INT
+AS
+BEGIN
+    -- Verificar que existe user group class
+    IF EXISTS (SELECT 1 FROM dbo.user_group_class_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.user_group_class_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Success
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Failure
+    END
+END;
+
+CREATE PROCEDURE [dbo].[RET_ALL_USER_GROUP_CLASSES_PR]
+AS
+BEGIN
+    SELECT id, group_class_id, client_id, created
+    FROM user_group_class_tbl;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[RET_USER_GROUP_CLASS_BY_ID_PR]
+    @P_Id INT
+AS
+BEGIN
+    SELECT id, group_class_id, client_id, created
+    FROM user_group_class_tbl
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+CREATE PROCEDURE [dbo].[UPD_USER_GROUP_CLASS_PR]
+    @P_Id INT,
+    @P_GroupClassId INT,
+    @P_ClientId INT,
+AS
+BEGIN
+    UPDATE dbo.user_group_class_tbl
+    SET 
+        group_class_id = @P_GroupClassId,
+        client_id = @P_ClientId,
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+-----------------------------------------\-PersonalTraining CRUD-\---------------------------------------------------------------------------
+-- Crear un nuevo registro en personal_training_tbl
+CREATE PROCEDURE [dbo].[CRE_PERSONAL_TRAINING_PR]
+    @P_ClientId INT,
+    @P_EmployeeId INT,
+    @P_IsCancelled NVARCHAR(50),
+    @P_IsPaid NVARCHAR(50),
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_ProgrammedDate DATETIME,
+    @P_HourlyRate DECIMAL(18, 0)
+AS
+BEGIN
+    INSERT INTO dbo.personal_training_tbl (client_id, employee_id, is_cancelled, is_paid, time_of_entry, time_of_exit, programed_date, hourly_rate)
+    VALUES (@P_ClientId, @P_EmployeeId, @P_IsCancelled, @P_IsPaid, @P_TimeOfEntry, @P_TimeOfExit, @P_ProgrammedDate, @P_HourlyRate);
+    RETURN 0;
+END;
+
+-- Eliminar un registro de personal_training_tbl
+CREATE PROCEDURE [dbo].[DEL_PERSONAL_TRAINING_PR]
+    @P_Id INT
+AS
+BEGIN
+    -- Verificar que existe el registro
+    IF EXISTS (SELECT 1 FROM dbo.personal_training_tbl WHERE id = @P_Id)
+    BEGIN
+        DELETE FROM dbo.personal_training_tbl
+        WHERE id = @P_Id;
+        RETURN 0; -- Eliminado exitosamente
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Registro no encontrado
+    END
+END;
+
+-- Recuperar todos los registros de personal_training_tbl
+CREATE PROCEDURE [dbo].[RET_ALL_PERSONAL_TRAININGS_PR]
+AS
+BEGIN
+    SELECT id, client_id, employee_id, is_cancelled, is_paid, time_of_entry, time_of_exit, programed_date, hourly_rate
+    FROM dbo.personal_training_tbl;
+    RETURN 0;
+END;
+
+-- Recuperar un registro por ID de personal_training_tbl
+CREATE PROCEDURE [dbo].[RET_PERSONAL_TRAINING_BY_ID_PR]
+    @P_Id INT
+AS
+BEGIN
+    SELECT id, client_id, employee_id, is_cancelled, is_paid, time_of_entry, time_of_exit, programed_date, hourly_rate
+    FROM dbo.personal_training_tbl
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+-- Actualizar un registro en personal_training_tbl
+CREATE PROCEDURE [dbo].[UPD_PERSONAL_TRAINING_PR]
+    @P_Id INT,
+    @P_ClientId INT,
+    @P_EmployeeId INT,
+    @P_IsCancelled NVARCHAR(50),
+    @P_IsPaid NVARCHAR(50),
+    @P_TimeOfEntry TIME(7),
+    @P_TimeOfExit TIME(7),
+    @P_ProgrammedDate DATETIME,
+    @P_HourlyRate DECIMAL(18, 0)
+AS
+BEGIN
+    UPDATE dbo.personal_training_tbl
+    SET 
+        client_id = @P_ClientId,
+        employee_id = @P_EmployeeId,
+        is_cancelled = @P_IsCancelled,
+        is_paid = @P_IsPaid,
+        time_of_entry = @P_TimeOfEntry,
+        time_of_exit = @P_TimeOfExit,
+        programed_date = @P_ProgrammedDate,
+        hourly_rate = @P_HourlyRate
+    WHERE id = @P_Id;
+    RETURN 0;
+END;
+
+
+-----------------------------------------\-Otro CRUD-\---------------------------------------------------------------------------
