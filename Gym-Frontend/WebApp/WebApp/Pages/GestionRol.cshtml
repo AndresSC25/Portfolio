@@ -1,0 +1,128 @@
+﻿@page
+@model GestionRolModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+<script src="~/js/pages/userrol.js"></script>
+<div class="bs-docs-section" style="margin-bottom: 3rem; margin-top: 3rem; padding: 0.1rem">
+    <div class="row">
+        <div class="header-container d-flex justify-content-between ">
+            <h1>Lista de usuarios</h1>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-back rounded-3 " onclick="history.back()">
+                    <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+                </button>
+            </div>
+        </div>
+        <div style="height: 3.125rem;"></div>
+        <div class="col-lg-12">
+            <h3>Seleccione un usuario</h3>
+            <table id="tblUsers" class="display row-border compact hover" style="width: 100%">
+                <thead style="background-color: rgb(240, 181, 58)">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo electrónico</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 4rem"></div>
+    <div class="row">
+        <h3>Lista de roles</h3>
+        <div class="col-lg-12">
+            <table id="tblRol" class="display row-border compact hover" style="width: 100%">
+                <thead style="background-color: rgb(240, 181, 58)">
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo de rol</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 4rem"></div>
+    <div class="container">
+        <form id="userRoleForm" class="p-4 border rounded shadow-sm bg-light form-container">
+            <div class="form-header mb-1">
+                <h4>Gestión de roles</h4>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="actionSelect" class="sr-only mt-4 mb-2">Acción</label>
+                    <select class="form-control mb-2" id="actionSelect">
+                        <option value="" selected>Seleccione una acción</option>
+                        <option value="assign">Asignar</option>
+                        <option value="remove">Eliminar</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="selectedRol" class="sr-only mt-4 mb-2">Tipo de Usuario</label>
+                    <select class="form-control mb-2" id="selectedRol" aria-label="Default select example">
+                        <option value="0" selected>Seleccione un rol</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Entrenador</option>
+                        <option value="3">Recepcionista</option>
+                        <option value="4">Cliente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="textIdUserForNewRole" class="sr-only mt-4 mb-2">ID de usuario</label>
+                    <div class="input-group mb-2">
+                        <input id="textIdUserForNewRole" type="text" class="form-control" placeholder="ID Usuario" required readonly="readonly">
+                    </div>
+                </div>
+
+                <div id="trainerAvailability" style="display: none;">
+                    <fieldset>
+                        <legend>Disponibilidad del Entrenador</legend>
+                        <label>
+                            <input type="checkbox" name="days" value="L"> Lunes
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="M"> Martes
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="K"> Miércoles
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="J"> Jueves
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="V"> Viernes
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="S"> Sábado
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="days" value="D"> Domingo
+                        </label>
+                        <br>
+                        <label for="txtHoraEntrada" class="form-label mt-4">Hora de Entrada</label>
+                        <input id="txtHoraEntrada" type="time" class="form-control">
+                        <label for="txtHoraSalida" class="form-label mt-4">Hora de Salida</label>
+                        <input id="txtHoraSalida" type="time" class="form-control">
+                    </fieldset>
+                </div>
+
+                <div class="form-row align-items-center mt-4 form-buttons">
+                    <button id="btnSubmit" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">
+                        Enviar
+                    </button>
+                </div>
+
+            </div>
+        </form>
+        <div style="height: 3.125rem;"></div>
+    </div>
+</div>

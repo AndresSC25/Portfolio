@@ -1,0 +1,88 @@
+﻿@page
+@model RoutineDetailsModel
+@{
+}
+
+<link href="~/css/gestionRolStyle.css" rel="stylesheet"/>
+
+<div class="container mt-5">
+    <div class="header-container d-flex justify-content-between ">
+        <h2 id="routineName"></h2>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <table id="tblRoutine" class="display row-border compact hover" style="width: 100%">
+        <thead>
+        <tr>
+            <th scope="col">Ejercicio</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Set</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Repeticiones</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Equipo</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div class="header-container d-flex justify-content-between mt-4">
+        <h2>Progreso:</h2>
+    </div>
+    <table id="tblRoutineProgress" class="display row-border compact hover" style="width: 100%">
+        <thead>
+        <tr>
+            <th scope="col">Ejercicio</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Repeticiones</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Comentarios</th>
+            <th scope="col">Fecha</th>
+        </tr>
+        </thead>
+    </table>
+
+    <form class="p-4 border rounded shadow-sm bg-light form-container mt-4 d-none" id="progressForm">
+        <div class="form-header mb-1">
+            <h4>Formulario de Progreso</h4>
+        </div>
+        <div class="form-group d-none">
+            <label for="exerciseId" class="form-label mt-4">Id</label>
+            <input class="form-control" id="exerciseId" type="number" disabled>
+        </div>
+        <div class="form-group">
+            <label for="exerciseName" class="form-label mt-4">Ejercicio</label>
+            <input class="form-control" id="exerciseName" type="text" disabled>
+        </div>
+        <div class="form-group">
+            <label for="iSets" class="form-label mt-4">Sets</label>
+            <input id="iSets" type="number" class="form-control" placeholder="Número de Sets">
+        </div>
+        <div class="form-group">
+            <label for="iWeight" class="form-label mt-4">Peso (En KG)</label>
+            <input id="iWeight" type="number" class="form-control" placeholder="Peso">
+        </div>
+        <div class="form-group">
+            <label for="iReps" class="form-label mt-4">Repeticiones</label>
+            <input id="iReps" type="number" class="form-control" placeholder="Repeticiones">
+        </div>
+        <div class="form-group">
+            <label for="iTime" class="form-label mt-4">Tiempo (Minutos)</label>
+            <input id="iTime" type="number" class="form-control" placeholder="Tiempo (minutos)">
+        </div>
+        <div class="form-group">
+            <label for="txtComments" class="form-label mt-4">Comentarios (opcional)</label>
+            <input id="txtComments" type="text" class="form-control" placeholder="Ingrese comentarios sobre el progreso del ejercicio (opcional)">
+        </div>
+        <div class="form-buttons mt-3">
+            <button id="btnCreateProgress" type="button" class="btn btn-primary">Agregar</button>
+        </div>
+    </form>
+    <div class="text-white-50">space</div>
+    <div class="text-white-50">space</div>
+</div>
+
+<script src="~/js/Pages/RoutineDetails.js"></script>

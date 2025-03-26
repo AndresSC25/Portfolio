@@ -1,0 +1,8 @@
+﻿.p-2 a:hover { color: rgb(24, 188, 156) !important; }
+
+.p-5 {
+    align-items: stretch;
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 4rem !important;
+}

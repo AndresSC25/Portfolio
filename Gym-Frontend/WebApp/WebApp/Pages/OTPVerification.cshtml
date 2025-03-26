@@ -1,0 +1,37 @@
+﻿@page
+@model OTPVerificationModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+<script src="~/js/pages/otpverification.js"></script>
+<div class="container   
+ mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="p-4 border rounded shadow-sm bg-light m-auto form-container text-left">
+                <div class="form-header mb-4">
+                    <h3>Verificación de OTP</h3>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono">
+                </div>
+
+                <div class="mb-3">
+                    <label for="otp" class="form-label">Código OTP</label>
+                    <input type="text" class="form-control" id="otp">
+                    <div id="emailHelp" class="form-text">Válido por 30 minutos.</div>
+                </div>
+
+                <button id="btnCreate" class="btn btn-primary btn-lg" type="button">Verificar</button>
+            </form>
+        </div>
+    </div>
+</div>

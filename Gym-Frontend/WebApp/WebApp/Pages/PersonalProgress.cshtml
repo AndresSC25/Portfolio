@@ -1,0 +1,48 @@
+﻿@page
+@model PersonalProgressModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
+<script src="~/js/pages/measureprogress.js"></script>
+
+<div class="container mt-5">
+    <!-- Encabezado con título y botón de regreso -->
+    <div class="header-container d-flex justify-content-between align-items-center mb-5">
+        <h1>Progreso</h1>
+        <button class="btn btn-back rounded-3" onclick="window.location.href = '/Menu'">
+            <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+        </button>
+    </div>
+
+    <!-- Botón para resetear el zoom y gráfico del progreso -->
+    <div class="d-flex flex-column align-items-center">
+        <button id="resetZoom" class="btn btn-back rounded-3 mb-4">Reinicio</button>
+        <div id="progressCharts" class="w-100">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Sección de mediciones con tabla -->
+    <div class="mt-5">
+        <h4 class="mb-4">Mediciones</h4>
+        <div class="col-lg-12">
+            <table id="tblMeasures" class="display row-border compact hover" style="width: 100%">
+                <thead style="background-color: rgb(240, 181, 58)">
+                <tr>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>% de grasa corporal</th>
+                    <th>Fecha</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+</div>

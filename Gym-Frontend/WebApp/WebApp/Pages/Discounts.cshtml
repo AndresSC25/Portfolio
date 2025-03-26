@@ -1,0 +1,38 @@
+﻿@page
+@model DiscountsModel
+@{
+}
+
+<nav class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+    <a asp-area="" asp-page="/SetRegistrationDiscount" class="col btn">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-2 pb-3 text-white text-shadow-1">
+                <h3 class=" mt-4  display-7 lh-1 fw-bold">Establecer Descuentos para Matrícula /Borrar</h3>
+            </div>
+        </div>
+    </a>
+
+    <a asp-area="" asp-page="/SetInactiveDiscount" class="col btn">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+            <div class="d-flex flex-column h-100 p-2 pb-3 text-white text-shadow-1">
+                <h3 class=" mt-4  display-7 lh-1 fw-bold">Definir Descuentos para Clientes Inactivos/Borrar</h3>
+            </div>
+        </div>
+    </a>
+
+    <a asp-area="" asp-page="/GenerateCoupons" class="col btn">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+            <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1">
+                <h3 class=" mt-4  display-7 lh-1 fw-bold">Generar Cupones de Descuento/Borrar</h3>
+            </div>
+        </div>
+    </a>
+
+    <a asp-area="" asp-page="/Menu" class="col btn">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+            <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1">
+                <h3 class=" mt-4  display-7 lh-1 fw-bold">Volver /Borrar</h3>
+            </div>
+        </div>
+    </a>
+</nav>

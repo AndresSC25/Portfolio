@@ -1,0 +1,25 @@
+﻿.hero {
+    align-items: center;
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.service-item, .gallery-item, .contact-item { transition: transform 0.3s; }
+
+.service-item:hover, .gallery-item:hover, .contact-item:hover { transform: scale(1.05); }
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}

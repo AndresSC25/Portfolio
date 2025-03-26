@@ -1,0 +1,35 @@
+﻿@page
+@model RoutineHistoryModel
+@{
+}
+<link href="~/css/gestionRolStyle.css" rel="stylesheet"/>
+
+
+<div class="d-flex align-items-center">
+    <div class="container mt-5">
+        <div class="header-container d-flex justify-content-between ">
+            <h2 id="routineName"></h2>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-back rounded-3 " onclick="history.back()">
+                    <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card mx-auto">
+        <div class="card-header">
+            <h2>Lista de Rutinas</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group" id="routineList">
+                <!-- Las rutinas se llenarán dinámicamente -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Pages/RoutineHistory.js"></script>

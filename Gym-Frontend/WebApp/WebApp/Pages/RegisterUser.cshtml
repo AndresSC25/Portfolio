@@ -1,0 +1,105 @@
+﻿@page
+@model RegisterUserModel
+@{ }
+
+<script src="~/js/pages/registerUser.js"></script>
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+
+<div class="row">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Registro de usuario</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+
+    <form class="p-4 border rounded shadow-sm bg-light form-container">
+        <fieldset>
+            <div class="form-header mb-1">
+                <h4>Nuevo usuario</h4>
+            </div>
+            <div class="form-group">
+                <label for="txtName" class="form-label mt-4">Nombre</label>
+                <input id="txtName" type="text" class="form-control" placeholder="Ingresa el nombre...">
+            </div>
+            <div class="form-group">
+                <label for="txtLastName" class="form-label mt-4">Apellido</label>
+                <input id="txtLastName" type="text" class="form-control" placeholder="Ingresa el apellido...">
+            </div>
+            <div class="form-group">
+                <label for="txtPhone" class="form-label mt-4">Teléfono</label>
+                <input id="txtPhone" type="text" class="form-control" placeholder="Ingresa el teléfono...">
+            </div>
+            <div class="form-group">
+                <label for="txtEmail" class="form-label mt-4">Correo Electrónico</label>
+                <input id="txtEmail" type="email" class="form-control" placeholder="Ingresa el correo electrónico...">
+            </div>
+            <div class="form-group">
+                <label for="txtGender" class="form-label mt-4">Género</label>
+                <select id="txtGender" class="form-control">
+                    <option value="" disabled selected>Selecciona el género...</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtBirthDate" class="form-label mt-4">Fecha de Nacimiento</label>
+                <input id="txtBirthDate" type="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Roles</label>
+                <div>
+                    <label><input type="checkbox" name="roles" value="1"> Administrator</label><br>
+                    <label><input type="checkbox" name="roles" value="2"> Entrenador</label><br>
+                    <label><input type="checkbox" name="roles" value="3"> Recepcionista</label><br>
+                    <label><input type="checkbox" name="roles" value="4"> Cliente</label>
+                </div>
+            </div>
+            <div id="trainerAvailability" style="display: none;">
+                <fieldset>
+                    <legend>Disponibilidad del Entrenador</legend>
+                    <form>
+                        <label>
+                            <input type="checkbox" name="days" value="L"> Lunes
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="M"> Martes
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="K"> Miércoles
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="J"> Jueves
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="V"> Viernes
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="S"> Sábado
+                        </label><br>
+                        <label>
+                            <input type="checkbox" name="days" value="D"> Domingo
+                        </label><br>
+                        <label for="txtHoraEntrada" class="form-label mt-4">Hora de Entrada</label>
+                        <input id="txtHoraEntrada" type="time" class="form-control">
+                        <label for="txtHoraSalida" class="form-label mt-4">Hora de Salida</label>
+                        <input id="txtHoraSalida" type="time" class="form-control">
+                    </form>
+                </fieldset>
+            </div>
+            <div class="container py-3">
+                <button id="btnCreate" class="source-button btn btn-primary btn-xs" type="button">
+                    Crear
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    <br/>
+    <div style="height: 3.125rem;"></div>
+</div>

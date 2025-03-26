@@ -1,0 +1,114 @@
+﻿@page
+@model CreateGroupClassModel
+@{
+}
+
+
+<link href="~/css/gestionRolStyle.css" rel="stylesheet"/>
+
+<div class="container mt-5">
+
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Clases grupales existentes</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <table id="tblGroupClasses" class="display row-border compact hover" style="width: 100%">
+        <thead>
+        <tr>
+            <th scope="col">Nombre de la clase</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora de inicio</th>
+            <th scope="col">Hora de fin</th>
+            <th scope="col">Capacidad máxima</th>
+            <th scope="col">Registrados</th>
+            <th scope="col">Entrenador a cargo</th>
+        </tr>
+        </thead>
+    </table>
+    <div id="clientsContainer" class="d-none">
+        <h2>Clientes registrados a la clase</h2>
+        <table id="tblClients" class="display row-border compact hover" style="width: 100%">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha de registro</th>
+            </tr>
+            </thead>
+        </table>
+
+    </div>
+
+    <form class="p-4 border rounded shadow-sm bg-light form-container mt-5">
+        <div class="form-header mb-4">
+            <h4>Formulario para clases grupales</h4>
+        </div>
+        <div class="form-group mb-3">
+            <label for="classId" class="form-label">Id de la clase</label>
+            <input type="number" class="form-control" id="classId" value="0" readonly="readonly">
+        </div>
+        <div class="form-group mb-3">
+            <label for="className" class="form-label">Nombre de la clase</label>
+            <input type="text" class="form-control" id="className" placeholder="Ingrese el nombre de la clase">
+        </div>
+        <div class="form-group mb-3">
+            <label for="classDate" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="classDate">
+        </div>
+        <div class="form-row row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="startTime" class="form-label">Hora de inicio</label>
+                <input type="time" class="form-control" id="startTime">
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="endTime" class="form-label">Hora de fin</label>
+                <input type="time" class="form-control" id="endTime">
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="maxCapacity" class="form-label">Capacidad máxima/Cupos</label>
+            <input type="number" class="form-control" id="maxCapacity" placeholder="Ingrese la capacidad máxima">
+        </div>
+        <div class="form-row row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="trainer" class="form-label">Entrenador a cargo</label>
+                <select class="form-control" id="trainer">
+                    <!-- Opciones de entrenadores -->
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="border p-3 bg-white rounded">
+                    <p>
+                        <strong>Días de la semana que trabaja:</strong> <span id="workDays">-</span>
+                    </p>
+                    <p>
+                        <strong>Hora de entrada:</strong> <span id="startTimeInfo">00:00</span>
+                    </p>
+                    <p>
+                        <strong>Hora de salida:</strong> <span id="endTimeInfo">00:00</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button id="btnCreate" type="button" class="btn btn-primary ">
+                <i class="fab fa-google"></i> Crear
+            </button>
+            <button id="btnModify" type="button" class="btn btn-secondary">
+                Modificar
+            </button>
+            <button id="btnDelete" type="button" class="btn btn-danger">
+                Eliminar
+            </button>
+        </div>
+    </form>
+    <div style="height: 3.125rem;"></div>
+</div>
+
+
+<script src="~/js/pages/groupclasscreate.js"></script>

@@ -1,0 +1,89 @@
+﻿@page
+@model ExerciseModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="container mb-10">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Ejercicios existentes</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+
+    <table id="tblExercises" class="display row-border compact hover" style="width: 100%">
+        <thead style="background-color: rgb(240, 181, 58)">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre de ejercicio</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Sets</th>
+            <th scope="col">Repeticiones</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Tiempo</th>
+        </tr>
+    </table>
+
+    <div style="height: 3.125rem;"></div>
+
+    <form class="p-4 border rounded shadow-sm bg-light form-container">
+        <div class="form-header mb-1">
+            <h4>Formulario de ejercicio nuevo</h4>
+        </div>
+        <div class="form-group">
+            <label for="txtName" class="form-label mt-4">Id</label>
+            <input class="form-control" id="exerciseId" type="text" readonly placeholder="ID del Ejercicio">
+        </div>
+        <div class="form-group">
+            <label for="txtName" class="form-label mt-4">Nombre</label>
+            <input class="form-control" id="exerciseName" type="text" placeholder="Ingrese el nombre del ejercicio...">
+        </div>
+        <div class="form-group">
+            <label for="txtName" class="form-label mt-4">Tipo</label>
+            <select class="form-control" id="cbExerciseType">
+                <option value="">Seleccione el tipo de ejercicio.</option>
+                <option value="Peso">Basado en peso</option>
+                <option value="Tiempo">Basado en tiempo</option>
+                <option value="AMRAP">AMRAP</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="txtName" class="form-label mt-4">Equipo</label>
+            <select class="form-control" id="sltEquipment"></select>
+        </div>
+
+        <div class="form-group time d-none">
+            <label for="txtName" class="form-label mt-4">Tiempo (Minutos)</label>
+            <input id="iTime" type="number" class="form-control" placeholder="Tiempo (minutos)">
+        </div>
+        <div class="form-group sets d-none">
+            <label for="txtName" class="form-label mt-4">Sets</label>
+            <input id="iSets" type="number" class="form-control" placeholder="Número de Sets">
+        </div>
+        <div class="form-group reps d-none">
+            <label for="txtName" class="form-label mt-4">Repeticiones</label>
+            <input id="iReps" type="number" class="form-control" placeholder="Repeticiones">
+        </div>
+        <div class="form-group weight d-none">
+            <label for="txtName" class="form-label mt-4">Peso (En KG)</label>
+            <input id="iWeight" type="number" class="form-control" placeholder="Peso">
+        </div>
+
+
+        <div class="form-buttons mt-3">
+            <button id="btnCreateExercise" type="button" class="btn btn-primary">Crear</button>
+            <button id="btnUpdateExercise" type="button" class="btn btn-secondary">Actualizar</button>
+            @* <button id="btnDeleteExercise" type="button" class="btn btn-danger">Eliminar ejercicio</button> *@
+        </div>
+
+    </form>
+    <div style="height: 3.125rem;"></div>
+</div>
+
+<script src="~/js/Pages/Exercise.js"></script>

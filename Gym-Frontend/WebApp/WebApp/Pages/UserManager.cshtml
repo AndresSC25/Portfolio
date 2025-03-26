@@ -1,0 +1,109 @@
+﻿@page
+@model UserManagerModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+
+<div class="bs-docs-section">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Lista de usuarios</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+
+    <div class="col-lg-12">
+        <table id="tblUsers" class="display row-border compact hover" style="width: 100%">
+            <thead style="background-color: rgb(240, 181, 58)">
+            <tr>
+                <th class="d-none">Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nº telefónico</th>
+                <th>Correo</th>
+                <th>Último ingreso</th>
+                <th>Estado</th>
+                <th>Género</th>
+                <th>Fecha Nac.</th>
+                <th>Creado</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <form class="p-4 border rounded shadow-sm bg-light form-container">
+        <fieldset>
+            <div class="form-header mb-1">
+                <h4>Editar usuario</h4>
+            </div>
+            <div class="form-group">
+                <label for="txtId" class="form-label mt-4">ID</label>
+                <input id="txtId" readonly="readonly" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="txtName" class="form-label mt-4">Nombre</label>
+                <input type="text" class="form-control" id="txtName" placeholder="Ingrese el nombre...">
+            </div>
+            <div class="form-group">
+                <label for="txtLastName" class="form-label mt-4">Apellido</label>
+                <input type="text" class="form-control" id="txtLastName" placeholder="Ingrese el apellido...">
+            </div>
+            <div class="form-group">
+                <label for="txtPhone" class="form-label mt-4">Número telefónico</label>
+                <input type="tel" class="form-control" id="txtPhone" placeholder="Ingrese el número telefónico...">
+            </div>
+            <div class="form-group">
+                <label for="txtEmail" class="form-label mt-4">Correo electrónico</label>
+                <input id="txtEmail" type="email" class="form-control" placeholder="Ingrese el correo electrónico...">
+            </div>
+            <div class="form-group">
+                <label for="cbGender" class="form-label mt-4">Género</label>
+                <select class="form-select" id="cbGender">
+                    <option value="">Seleccione un género</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtBirthDate" class="form-label mt-4">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="txtBirthDate" placeholder="Ingrese la fecha de nacimiento...">
+            </div>
+            <div class="form-group d-none">
+                <label for="txtLastLogin" class="form-label mt-4">Último ingreso</label>
+                <input type="date" class="form-control" id="txtLastLogin">
+            </div>
+            <div class="form-group d-none">
+                <label for="txtCreated" class="form-label mt-4">Creado</label>
+                <input type="date" class="form-control" id="txtCreated">
+            </div>
+            @* <div class="form-group">
+            <label for="selectRoles" class="form-label mt-4">Seleccionar Roles</label>
+            <select class="form-control" id="selectRoles" multiple></select>
+            </div> *@
+            <div class="form-group">
+                <label for="cbStatus" class="form-label mt-4">Estado</label>
+                <select class="form-select" id="cbStatus">
+                    <option value="Active">Habilitado</option>
+                    <option value="Disabled">Deshabilitado</option>
+                    <option value="Expired">Expirado</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="form-group my-4">
+            @* <button id="btnCreate" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">Crear</i></button> *@
+            <button id="btnUpdate" class="source-button btn btn-info btn-xs" type="button" tabindex="0">Actualizar</button>
+            @* <button id="btnDelete" class="source-button btn btn-danger btn-xs" type="button" tabindex="0"> <i class="bi bi-code">Borrar</i></button> *@
+        </div>
+    </form>
+    <br/>
+    <div style="height: 3.125rem;"></div>
+
+</div>
+
+<script src="~/js/pages/User.js"></script>

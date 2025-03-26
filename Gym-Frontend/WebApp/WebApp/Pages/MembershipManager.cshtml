@@ -1,0 +1,73 @@
+﻿@page
+@model MembershipManagerModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="bs-docs-section">
+    <div class="row">
+        <div style="height: 3.125rem;"></div>
+        <div class="header-container d-flex justify-content-between ">
+            <h1>Membresías</h1>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-back rounded-3 " onclick="history.back()">
+                    <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+                </button>
+            </div>
+        </div>
+        <div style="height: 3.125rem;"></div>
+        <div class="col-lg-12">
+            <table id="tblMemberships" class="display row-border compact hover" style="width: 100%">
+                <thead style="background-color: rgb(240, 181, 58)">
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Cantidad de Clases Permitidas</th>
+                    <th>Costo Mensual</th>
+                    <th>Creado</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <form class="p-4 border rounded shadow-sm bg-light form-container">
+            <fieldset>
+                <h4 class="form-header">Registro de Membresías</h4>
+                <div class="form-group">
+                    <label for="txtId" class="form-label mt-4">ID de Membresía</label>
+                    <input id="txtId" readonly="readonly" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="txtType" class="form-label mt-4">Tipo</label>
+                    <input type="text" class="form-control" id="txtType" placeholder="Ingrese el tipo de membresía">
+                </div>
+                <div class="form-group">
+                    <label for="txtAmountClassesAllowed" class="form-label mt-4">Cantidad de Clases Permitidas</label>
+                    <input type="number" class="form-control" id="txtAmountClassesAllowed" placeholder="Ingrese el número de clases permitidas">
+                </div>
+                <div class="form-group">
+                    <label for="txtMonthlyCost" class="form-label mt-4">Costo Mensual</label>
+                    <input type="number" class="form-control" id="txtMonthlyCost" placeholder="Ingrese el costo mensual">
+                </div>
+            </fieldset>
+            <div class="form-group my-4">
+                <button id="btnCreate" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">
+                    <i class="bi bi-code">Crear</i>
+                </button>
+                <button id="btnUpdate" class="source-button btn btn-info btn-xs" type="button" tabindex="0">
+                    <i class="bi bi-code">Actualizar</i>
+                </button>
+                <button id="btnDelete" class="source-button btn btn-danger btn-xs" type="button">
+                    <i class="bi bi-code">Eliminar</i>
+                </button>
+            </div>
+        </form>
+        <br/>
+        <div style="height: 3.125rem;"></div>
+    </div>
+</div>
+
+<script src="~/js/pages/Membership.js"></script>

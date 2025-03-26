@@ -1,0 +1,63 @@
+﻿@page
+@model MenuUserEditionModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="container">
+    <div class="container mt-5">
+        <div class="header-container d-flex justify-content-between align-items-center">
+            <h1>Gestión de usuarios</h1>
+            <button class="btn btn-back rounded-3" onclick="window.location.href = '/Menu'">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+
+    <nav class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <a asp-page="/registerUser" class="col btn d-none registerUser">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Registrar Usuarios</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/>
+                        <path d="M16 19h6"/>
+                        <path d="M19 16v6"/>
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/UserManager" class="col btn d-none userManager">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Lista de Usuarios</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+                        <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                        <path d="M9 12l.01 0"/>
+                        <path d="M13 12l2 0"/>
+                        <path d="M9 16l.01 0"/>
+                        <path d="M13 16l2 0"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/GestionRol" class="col btn d-none gestionRol">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Gestión de Roles</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-swipe" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M15 16.572v2.42a2.01 2.01 0 0 1 -2.009 2.008h-7.981a2.01 2.01 0 0 1 -2.01 -2.009v-7.981a2.01 2.01 0 0 1 2.009 -2.01h2.954"/>
+                        <path d="M9.167 4.511a2.04 2.04 0 0 1 2.496 -1.441l7.826 2.097a2.04 2.04 0 0 1 1.441 2.496l-2.097 7.826a2.04 2.04 0 0 1 -2.496 1.441l-7.827 -2.097a2.04 2.04 0 0 1 -1.441 -2.496l2.098 -7.827z"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+    </nav>
+</div>
+
+<script src="~/js/Pages/MenuUserEdition.js"></script>

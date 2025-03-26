@@ -1,0 +1,67 @@
+﻿@page
+@model ProfileModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+<script src="~/js/pages/profile.js"></script>
+
+<div class="container">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Perfil</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+
+    <div class="row align-items-start">
+        <div class="">
+            <div class="form-floating mb-3">
+                <input id="txtName" type="text" aria-label="First name" class="form-control form-control-plaintext" disabled>
+                <label for="txtName" class="">Nombre completo: </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="txtDateBirth" aria-describedby="txtDateBirth" disabled>
+                <label for="txtDateBirth" class="">Fecha de nacimiento: </label>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtAge" aria-describedby="edad" disabled>
+                <label for="txtAge" class="">Edad: </label>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtGender" aria-describedby="genero" disabled>
+                <label for="InputEmail" class="">Genero: </label>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtEmail" aria-describedby="email" disabled>
+                <label for="InputEmail" class="">Correo electrónico: </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtPhone" aria-describedby="phone" disabled>
+                <label for="InputPhone" class="">Teléfono: </label>
+            </div>
+
+
+        </div>
+
+        <br/>
+        <div class="form-group my-4">
+            <button id="btnAllowModify" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">Modificar</button>
+            <button id="btnUpdate" class="source-button btn btn-info btn-xs" type="button" tabindex="0">Guardar</button>
+            <a asp-page="/PasswordChanger">
+                <button id="btnChange" class="source-button btn btn-light btn-xs" type="button" tabindex="0"> Cambiar contraseña</button>
+            </a>
+
+
+        </div>
+        <br/>
+        <br/>
+
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@page
+@model CreateRoutineModel
+@{
+}
+
+<link href="~/css/gestionRolStyle.css" rel="stylesheet"/>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+<div class="container">
+    <div class="container mt-5">
+        <div class="header-container d-flex justify-content-between align-items-center">
+            <h1>Crear Rutinas</h1>
+            <button class="btn btn-back rounded-3" onclick="window.location.href = '/RoutineCreationMenu'">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <form class="p-4 border rounded shadow-sm bg-light form-container mt-5">
+        <div class="form-header mb-4">
+            <h4>Formulario para la creación de rutinas</h4>
+        </div>
+        <div class="form-group mb-3">
+            <label for="routineName" class="form-label">Nombre de la rutina</label>
+            <input type="text" class="form-control" id="routineName" placeholder="Ingrese el nombre de la rutina">
+        </div>
+        <div class="form-group mb-3">
+            <label for="sltUsers" class="form-label">Seleccione un usuario</label>
+            <select class="form-control" id="sltUsers"></select>
+        </div>
+        <div class="form-group mb-3">
+            <label for="sltExercises" class="form-label">Seleccione un ejercicio</label>
+            <select class="form-control" id="sltExercises"></select>
+        </div>
+        <div id="selectedExercises" class="mb-3">
+            <!-- Aquí se agregarán los labels y botones de remover -->
+        </div>
+        <div class="form-buttons">
+            <button id="btnCreate" type="button" class="btn btn-primary ">
+                <i class="fab fa-google"></i> Crear
+            </button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#sltUsers').select2({
+            placeholder: "Seleccione un usuario",
+            allowClear: true,
+            language: {
+                noResults: function() {
+                    return "No se encontraron resultados";
+                }
+            }
+        });
+        $('#sltExercises').select2({
+            placeholder: "Seleccione un ejercicio",
+            allowClear: true,
+            language: {
+                noResults: function() {
+                    return "No se encontraron resultados";
+                }
+            }
+        });
+    });
+</script>
+<script src="~/js/Pages/Routine.js"></script>

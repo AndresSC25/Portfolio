@@ -1,0 +1,62 @@
+﻿@page
+@model MenuMeasurementsModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="container">
+    <div class="container mt-5">
+        <div class="header-container d-flex justify-content-between align-items-center">
+            <h1>Medición</h1>
+            <button class="btn btn-back rounded-3" onclick="window.location.href = '/Menu'">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <nav class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <a asp-page="/CreateMeasureAppointment" class="col btn d-none createMeasureAppointment">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Crear cita</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/measurement-form" class="col btn d-none measurementForm">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Tomar medidas</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ruler-2" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M17 3l4 4l-14 14l-4 -4z"/>
+                        <path d="M16 7l-1.5 -1.5"/>
+                        <path d="M13 10l-1.5 -1.5"/>
+                        <path d="M10 13l-1.5 -1.5"/>
+                        <path d="M7 16l-1.5 -1.5"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/measurement-list" class="col btn d-none measurementList">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Lista de citas</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+                        <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+                        <path d="M9 12l.01 0"/>
+                        <path d="M13 12l2 0"/>
+                        <path d="M9 16l.01 0"/>
+                        <path d="M13 16l2 0"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+    </nav>
+</div>
+
+<script src="~/js/Pages/MenuMeasurements.js"></script>

@@ -1,0 +1,58 @@
+﻿@page
+@model MenuGroupClassModel
+@{
+}
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+<div class="container">
+    <div class="container mt-5">
+        <div class="header-container d-flex justify-content-between align-items-center">
+            <h1>Clases grupales</h1>
+            <button class="btn btn-back rounded-3" onclick="window.location.href = '/Menu'">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <nav class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <a asp-page="/CreateGroupClass" class="col btn d-none createGroupClass">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Crear</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z" fill="currentColor" stroke-width="0"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/RegisterGroupClass" class="col btn d-none registerGroupClass">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Registrarse</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/>
+                        <path d="M16 19h6"/>
+                        <path d="M19 16v6"/>
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        <a asp-page="/GroupClassTrainer" class="col btn d-none groupClassTrainer">
+            <div id="button-for-menu" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-2 pb-3 text-shadow-1 align-items-center">
+                    <h4 class="mt-4 mb-4 display-7 lh-1 fw-bold">Lista de clases</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-checklist" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8"/>
+                        <path d="M14 19l2 2l4 -4"/>
+                        <path d="M9 8h4"/>
+                        <path d="M9 12h2"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+    </nav>
+</div>
+
+<script src="~/js/Pages/MenuGroupClass.js"></script>

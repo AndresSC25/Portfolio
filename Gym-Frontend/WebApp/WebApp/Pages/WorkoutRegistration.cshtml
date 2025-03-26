@@ -1,0 +1,138 @@
+﻿@page
+@model WorkoutRegistrationModel
+@{
+}
+
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+
+<div class="bs-docs-section">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Formulario de registro de entrenamiento</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <h2>No funcional</h2>
+    <div style="height: 3.125rem;"></div>
+    <form>
+        <fieldset>
+
+
+            <div class="form-group">
+                <label for="cbExercise" class="form-label mt-4">Ejercicio</label>
+                <select class="form-select" id="cbExercise">
+                    <option value="1">Flexiones de pecho</option>
+                    <option value="2">Sentadillas</option>
+                    <option value="3">Plancha abdominal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cbRoutine" class="form-label mt-4">Rutina</label>
+                <select class="form-select" id="cbRoutine">
+                    <option value="1">Core</option>
+                    <option value="2">Fuerza</option>
+                    <option value="3">Flexibilidad</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtReps" class="form-label mt-4">Repeticiones</label>
+                <input id="txtReps" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="txtWeight" class="form-label mt-4">Peso</label>
+                <input id="txtWeight" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="txtTime" class="form-label mt-4">Tiempo en minutos</label>
+                <input id="txtTime" type="number" class="form-control">
+            </div>
+        </fieldset>
+    </form>
+    <br/>
+    <button id="btnCreate" class="source-button btn btn-primary btn-xs mb-5" type="button" tabindex="0">
+        <i class="bi bi-code">Agregar</i>
+    </button>
+
+    </>
+    <div class="row">
+        <legend>Historial de Entrenamientos Registrados</legend>
+        <div class="col-lg-12">
+            <table id="#" class="table table-bordered" style="width: 100%">
+                <thead class="table-dark">
+                <tr>
+                    <th>Ejercicio</th>
+                    <th>Rutina</th>
+                    <th>Repeticiones</th>
+                    <th>Peso</th>
+                    <th>Tiempo</th>
+                    <th>Fecha</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Flexiones de pecho</td>
+                    <td>Fuerza</td>
+                    <td>10</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>2024-07-01</td>
+                </tr>
+                <tr>
+                    <td>Sentadillas</td>
+                    <td>Flexibilidad</td>
+                    <td>15</td>
+                    <td>45 kg</td>
+                    <td>-</td>
+                    <td>2024-07-02</td>
+                </tr>
+                <tr>
+                    <td>Plancha abdominal</td>
+                    <td>Core</td>
+                    <td>8</td>
+                    <td>-</td>
+                    <td>35 min</td>
+                    <td>2024-07-03</td>
+                </tr>
+                <tr>
+                    <td>Flexiones de pecho</td>
+                    <td>Fuerza</td>
+                    <td>12</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>2024-07-04</td>
+                </tr>
+                <tr>
+                    <td>Sentadillas</td>
+                    <td>Flexibilidad</td>
+                    <td>20</td>
+                    <td>30 kg</td>
+                    <td>-</td>
+                    <td>2024-07-05</td>
+                </tr>
+                <tr>
+                    <td>Plancha abdominal</td>
+                    <td>Core</td>
+                    <td>10</td>
+                    <td>-</td>
+                    <td>45 min</td>
+                    <td>2024-07-06</td>
+                </tr>
+                <tr>
+                    <td>Flexiones de pecho</td>
+                    <td>Fuerza</td>
+                    <td>18</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>2024-07-07</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

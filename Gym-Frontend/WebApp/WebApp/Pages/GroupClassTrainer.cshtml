@@ -1,0 +1,36 @@
+﻿@page
+@model GroupClassTrainerModel
+@{
+}
+<link href="~/css/gestionRolStyle.css" rel="stylesheet"/>
+
+<div class="container mt-5">
+
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Clases grupales existentes</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <table id="tblGroupClasses" class="display row-border compact hover" style="width: 100%">
+        <thead>
+        <tr>
+            <th scope="col">Nombre de la clase</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora de inicio</th>
+            <th scope="col">Hora de fin</th>
+            <th scope="col">Capacidad máxima</th>
+            <th scope="col">Registrados</th>
+            <th scope="col">Entrenador a cargo</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div style="height: 3.125rem;"></div>
+</div>
+
+
+<script src="~/js/pages/groupclasscreate.js"></script>

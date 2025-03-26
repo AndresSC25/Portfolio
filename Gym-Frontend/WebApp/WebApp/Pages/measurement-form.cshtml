@@ -1,0 +1,77 @@
+﻿@page
+@model measurement_formModel
+@{
+}
+<script src="~/js/pages/measureform.js"></script>
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="container">
+
+    <div style="height: 3.125rem;"></div>
+
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Formulario para la tomada de medidas</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+
+    <div style="height: 3.125rem;"></div>
+    <legend>Seleccione un cliente</legend>
+    <div class="col-lg-12 table-responsive">
+        <table id="tblClients" class="display row-border compact hover" style="width: 100%">
+            <thead style="background-color: rgb(240, 181, 58)">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Correo electrónico</th>
+                <th>Número telefónico</th>
+            </tr>
+            </thead>
+            @* <tbody>
+
+            </tbody> *@
+        </table>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <form class="p-4 border rounded shadow-sm bg-light m-auto form-container">
+        <div class="form-header mb-1">
+            <h4>Datos</h4>
+        </div>
+        <div class="d-none">
+            <label for="txtId" class="form-label mt-4 ">Id</label>
+            <input id="txtId" readonly="readonly" type="number" class="form-control" aria-describedby="txtId" placeholder="Seleccione un cliente...">
+        </div>
+        <div>
+            <label for="txtName" class="form-label mt-4">Nombre</label>
+            <input id="txtName" readonly="readonly" type="text" class="form-control" aria-describedby="txtName" placeholder="Seleccione un cliente...">
+        </div>
+        <div>
+            <label for="txtHeight" class="form-label mt-4">Altura(cm)</label>
+            <input id="txtHeight" type="number" step=".01" min="80" max="400" class="form-control" aria-describedby="txtHeight" placeholder="Ingrese la altura...">
+        </div>
+        <div>
+            <label for="txtWeight" class="form-label mt-4">Peso(kg)</label>
+            <input id="txtWeight" type="number" step=".01" min="0" max="999" class="form-control" aria-describedby="txtWeight" placeholder="Ingrese el peso...">
+        </div>
+        <div>
+            <label class="form-label mt-4">Porcentaje de grasa corporal</label>
+            <div class="input-group mb-3">
+                <input id="txtFatPorcentage" type="number" step=".01" min="0" max="100" class="form-control" aria-label="fatPorcentage" placeholder="Ingrese el porcentaje de grasa corporal...">
+                <span class="input-group-text">%</span>
+            </div>
+        </div>
+
+        <div class="form-buttons">
+            <button id="btnCreate" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">
+                Crear
+            </button>
+        </div>
+    </form>
+    <div class="text-white-50">space</div>
+    <div class="text-white-50">space</div>
+</div>

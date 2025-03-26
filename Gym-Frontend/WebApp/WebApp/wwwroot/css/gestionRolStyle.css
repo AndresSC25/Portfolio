@@ -1,0 +1,61 @@
+﻿th, td { border: black 1px solid; }
+
+.form-container {
+    margin: auto;
+    max-width: 600px;
+}
+
+.form-header {
+    background-color: #f0b53a;
+    border-radius: 5px;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+table thead {
+    background-color: rgb(240, 181, 58);
+    color: white;
+}
+
+.bnt-back:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.btn-back {
+    background-color: #f0b53a;
+    border: none;
+    color: white;
+    height: 2.5rem;
+    width: 5rem;
+}
+
+.btn-back:hover {
+    background-color: white;
+    border: 2px solid #f0b53a;
+    color: #f0b53a;
+}
+
+.btn-danger { background-color: red; }
+
+#button-for-menu {
+    background-color: #34495E !important;
+    border: 2px solid #5DADE2;
+}
+
+#button-for-menu:hover { transform: scale(1.05); }
+
+#button-for-menu div h4 {
+    color: white !important;
+    font-family: "Inter", sans-serif !important;
+    font-optical-sizing: auto;
+}
+
+#button-for-menu div h4:hover { color: #f0b53a !important; }

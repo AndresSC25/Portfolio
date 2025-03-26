@@ -1,0 +1,59 @@
+﻿@page
+@model RegisterGroupClassModel
+@{
+}
+<script src="~/js/pages/groupclassregister.js"></script>
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="container">
+    <div style="height: 3.125rem;"></div>
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Registro a clases grupales</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+    <h2>Clases grupales disponibles</h2>
+    <table id="tblGroupClasses" class="display row-border compact hover" style="width: 100%">
+        <thead style="background-color: rgb(240, 181, 58)">
+        <tr>
+            <th class="d-none" scope="col">Id</th>
+            <th scope="col">Nombre de la clase</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora de inicio</th>
+            <th scope="col">Hora de fin</th>
+            <th scope="col">Capacidad máxima</th>
+            <th scope="col">Registrados</th>
+            <th class="d-none" scope="col">Id Entrenador</th>
+            <th scope="col">Entrenador a cargo</th>
+        </tr>
+        </thead>
+    </table>
+    <form class="p-4 border rounded shadow-sm bg-light form-container mt-5">
+        <div class="form-header mb-1">
+            <h4>Formulario para clases grupales</h4>
+        </div>
+        <div class="d-none">
+            <label for="txtId" class="form-label mt-4">Id</label>
+            <input id="txtId" readonly="readonly" type="number" class="form-control" aria-describedby="txtId" placeholder="">
+        </div>
+        <div class=" form-group mb-3">
+            <label for="txtName" class="form-label mt-4">Clase</label>
+            <input id="txtName" readonly="readonly" type="text" class="form-control" aria-describedby="txtName" placeholder="Seleccione una clase...">
+        </div>
+
+        <div class="form-buttons">
+            <button id="btnRegister" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">
+                Registrarse
+            </button>
+            <button id="btnCancel" type="button" class="btn btn-danger">
+                Cancelar
+            </button>
+        </div>
+
+    </form>
+    <div class="text-white-50">space</div>
+</div>

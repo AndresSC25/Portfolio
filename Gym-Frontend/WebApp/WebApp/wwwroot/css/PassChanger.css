@@ -1,0 +1,9 @@
+﻿.error {
+    background-color: #ffdddd; /* Fondo ligeramente rosado para resaltar */
+    border: 1px solid red;
+}
+
+.error::placeholder {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @*  Scripts *@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css"></link>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true"/>
+    <link href="~/lib/bootstrap/dist/css/background.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/controlactions.js"></script>
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-primary" style="background-color: #2F3640 !important">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index" style="color: white">SILUETA CLUB FITNESS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item" id="logOutItem" style="display: none">
+                        <button id="btnLogOut" class="nav-link text-dark cursor-pointer">Salir</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class=" footer text-muted" style="background-color: #2F3640">
+    <div class="container" style="color: white">
+        &copy; 2024 - Silueta Club Fitness - <a asp-area="" asp-page="/Privacy">Privacidad</a>
+    </div>
+</footer>
+
+@await RenderSectionAsync("Scripts", false)
+<script>
+        // document.addEventListener('DOMContentLoaded', function () {
+    //     var isAuthenticated = sessionStorage.getItem("IsAuthenticated");
+    //     var menuItem = document.getElementById("menuItem");
+    //     var registerItem = document.getElementById("registerItem");
+    //     var logOutItem = document.getElementById("logOutItem");
+
+    //     // if (isAuthenticated !== "true") {
+    //     //     menuItem.style.display = "none";
+    //     //     logOutItem.style.display = "none";
+    //     // }else {
+    //     //     registerItem.style.display = "none";
+    //     // }
+    // });
+
+    // let btnLogOut = document.getElementById('btnLogOut');
+    // btnLogOut.addEventListener('click', () => {
+    //     // Eliminar un solo ítem de sessionStorage
+    //     sessionStorage.removeItem("IsAuthenticated");
+    //     sessionStorage.removeItem("UserRoles");
+    //     sessionStorage.removeItem("UserId");
+
+    //     // O limpiar todo el sessionStorage
+    //     sessionStorage.clear();
+    //     window.location.href = "Index";
+    // });
+</script>
+</body>
+</html>

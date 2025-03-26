@@ -1,0 +1,69 @@
+﻿@page
+@model measurement_listModel
+@{
+}
+<script src="~/js/pages/meetinglist.js"></script>
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+<div class="container">
+    <div style="height: 3.125rem;"></div>
+
+    <div class="header-container d-flex justify-content-between ">
+        <h1>Citas agendadas</h1>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-back rounded-3 " onclick="history.back()">
+                <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+
+    <div class="table-responsive">
+        <table id="tblMeetings" class="display row-border compact hover" style="width: 100%">
+            <thead style="background-color: rgb(240, 181, 58)">
+            <tr>
+                <th>Numero de cita</th>
+                <th>Id cliente</th>
+                <th>Cliente</th>
+                <th>Id entrenador</th>
+                <th>Entrenador</th>
+                <th>Fecha</th>
+                <th>Hora inicio</th>
+                <th>Hora fin</th>
+                <th>Cancelada</th>
+            </tr>
+            </thead>
+
+        </table>
+    </div>
+
+
+    <form class="p-4 border rounded shadow-sm bg-light form-container">
+        <div class="form-header mb-1">
+            <h4>Detalles</h4>
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4 " for="txtIdPT">Número de cita</label>
+            <input id="txtIdPT" readonly="readonly" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Número de cita"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4 " for="txtDate">Fecha</label>
+            <input id="txtDate" readonly="readonly" type="date" class="form-control" aria-describedby="emailHelp" placeholder="Fecha"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4 " for="txtTimeIn">Hora de entrada</label>
+            <input id="txtTimeIn" readonly="readonly" type="time" class="form-control" aria-describedby="emailHelp" placeholder="Hora de entrada"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4 " for="txtTimeOut">Hora de salida</label>
+            <input id="txtTimeOut" readonly="readonly" type="time" class="form-control" aria-describedby="emailHelp" placeholder="Hora de salida"/>
+        </div>
+
+
+        <div class="form-buttons mt-3">
+            <button id="btnCancel" class="source-button btn btn-primary btn-xs" type="button" tabindex="0">Cancelar cita</button>
+        </div>
+
+    </form>
+    <div style="height: 3.125rem;"></div>
+
+</div>

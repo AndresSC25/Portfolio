@@ -1,0 +1,134 @@
+﻿@page
+@model AdminInvoicesModel
+@{
+}
+
+<link href="~/css/gestionrolstyle.css" rel="stylesheet"/>
+
+<div class="bs-docs-section">
+    <div class="row">
+        <div style="height: 3.125rem;"></div>
+        <div class="header-container d-flex justify-content-between ">
+            <h1>Historial de pagos</h1>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-back rounded-3" onclick="history.back()">
+                    <span class="material-icons-outlined material-symbols-outlined">arrow_back</span>
+                </button>
+            </div>
+        </div>
+        <div style="height: 3.125rem;"></div>
+        <div class="col-lg-12">
+            <h3>Selecciona una factura para ver detalles</h3>
+            <table id="tblInvoices" class="display row-border compact hover" style="width: 100%">
+                <thead style="background-color: rgb(240, 181, 58)">
+                <tr>
+                    <th>Número de factura</th>
+                    <th>Id cliente</th>
+                    <th>Nombre</th>
+                    <th>Id descuento</th>
+                    <th>Monto</th>
+                    <th>Monto con descuento</th>
+                    <th>Método de pago</th>
+                    <th>Pagado</th>
+                    <th>Creado</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div id="invoiceContainer" class="card my-5 d-none">
+        <div class="card-header text-center">
+            <h2>Factura #<span id="invoiceNum"></span></h2>
+        </div>
+        <div class="card-body">
+            <!-- Nombre de la persona -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Nombre:</strong> <span id="personName"></span>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <strong>Fecha:</strong> <span id="invoiceDate"></span>
+                </div>
+            </div>
+
+            <!-- Detalles de la matrícula -->
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h5>Detalles de la Matrícula</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Precio</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span id="membershipType"></span>
+                            </td>
+                            <td>₡<span id="membershipPrice"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Detalles de clases personales -->
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div id="personalClassesDetailsSection" style="display: none;">
+                        <h5>Detalles de Clases Personales</h5>
+                        <table class="table table-bordered" id="tblInvoiceDetails">
+                            <thead>
+                            <tr>
+                                <th>Clase</th>
+                                <th>Entrenador</th>
+                                <th>Cantidad (Horas)</th>
+                                <th>Precio por hora (₡)</th>
+                                <th>Total (₡)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Aqui voy a cargar los detalles en base a tblPersonalT -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de la factura -->
+            <div class="row mb-3">
+                <div class="col-md-12 text-right">
+                    <h5>Resumen</h5>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <strong>Monto Total:</strong>
+                            </td>
+                            <td>₡<span id="totalAmount"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Descuento:</strong>
+                            </td>
+                            <td>₡<span id="discountAmount"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Total Después del Descuento:</strong>
+                            </td>
+                            <td>₡<span id="amountAfterDiscount"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div style="height: 3.125rem;"></div>
+</div>
+
+<script src="~/js/pages/paymentsadmin.js"></script>

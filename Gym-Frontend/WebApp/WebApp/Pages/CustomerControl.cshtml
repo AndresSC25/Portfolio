@@ -1,0 +1,84 @@
+﻿@page
+@model CustomerControlModel
+@{
+}
+<div>
+    <h1>Gestor de clientes</h1>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Nombre y apellido del usuario" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div>
+        <table class="table ">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Membresia</th>
+                <th scope="col">Estado</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-active">
+                <th scope="row">1</th>
+                <td>Luis</td>
+                <td>Alvarado</td>
+                <td>Estandar</td>
+                <td>Activo</td>
+                <td class="">
+                    <button class="btn btn-success">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span> Editar
+                    </button>
+                    <button class="btn btn-danger">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span> Borrar
+                    </button>
+                    <button type="button" class="btn btn-info">
+                        <span class="material-symbols-outlined">
+                            forward_to_inbox
+                        </span> Mensaje
+                    </button>
+
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Andres</td>
+                <td>Segura</td>
+                <td>Gold</td>
+                <td>Activo</td>
+                <td class="">
+                    <button class="btn btn-success">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span> Editar
+                    </button>
+                    <button class="btn btn-danger">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span> Borrar
+                    </button>
+                    <button type="button" class="btn btn-info">
+                        <span class="material-symbols-outlined">
+                            forward_to_inbox
+                        </span> Mensaje
+                    </button>
+
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

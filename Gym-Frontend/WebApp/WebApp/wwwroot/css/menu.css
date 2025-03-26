@@ -1,0 +1,14 @@
+﻿#button-for-menu {
+    background-color: #34495E !important;
+    border: 2px solid #5DADE2;
+}
+
+#button-for-menu:hover { transform: scale(1.05); }
+
+#button-for-menu div h4 {
+    color: white !important;
+    font-family: "Inter", sans-serif !important;
+    font-optical-sizing: auto;
+}
+
+#button-for-menu div h4:hover { color: #f0b53a !important; }
