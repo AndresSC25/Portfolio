@@ -1,9 +1,5 @@
 # Portfolio
 
-![GitHub License](https://img.shields.io/github/license/YourGitHub/Portfolio?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/YourGitHub/Portfolio?style=flat-square)
-![GitHub commits](https://img.shields.io/github/commits-since/YourGitHub/Portfolio/v1.0.0?style=flat-square)
-
 Welcome to my portfolio! Below you can find some of the projects I have worked on, showcasing my skills and knowledge in various technologies.
 
 ---
@@ -35,9 +31,9 @@ Welcome to my portfolio! Below you can find some of the projects I have worked o
 
 ## Contact Me
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- **GitHub**: [My GitHub](https://github.com/YourGitHub)
+- **Email**: [your-email@example.com](mailto:aseguracalderon26@gmail.com.com)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/andressc25)
+- **GitHub**: [My GitHub](https://github.com/AndresSC25)
 
 ---
 
