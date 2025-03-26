@@ -37,12 +37,6 @@ Welcome to my portfolio! Below you can find some of the projects I have worked o
 
 ---
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 # Portafolio
 
 ![Licencia GitHub](https://img.shields.io/github/license/YourGitHub/Portfolio?style=flat-square)
@@ -80,12 +74,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contacto
 
-- **Correo Electrónico**: [your-email@example.com](mailto:your-email@example.com)
-- **LinkedIn**: [Tu Perfil de LinkedIn](https://www.linkedin.com/in/your-profile)
-- **GitHub**: [Mi GitHub](https://github.com/YourGitHub)
+- **Email**: [your-email@example.com](mailto:aseguracalderon26@gmail.com.com)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/andressc25)
+- **GitHub**: [My GitHub](https://github.com/AndresSC25)
 
 ---
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
